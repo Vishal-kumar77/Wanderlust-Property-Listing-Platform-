@@ -77,6 +77,12 @@ store.on("error", () => {
     console.log("ERROR IN MONGO SESSION STORE", err)
 })
 
+// Root Route 
+
+app.get("/", (req, res) => {
+  res.redirect("/listings"); // Or render a homepage if you have one
+});
+
 // using session middleware for creating express session 
 
 app.use(session({
