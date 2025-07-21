@@ -1,0 +1,17 @@
+<!-- using alerts of bootstrap for showing flash message on creation of new l -->
+
+<!-- success is an array so we apply condition if success arrray exist and if it has length greater than 0 i.e some element is present inside it then only show the flash message  -->
+<% if(success && success.length) {%>
+    <div class="alert alert-success alert-dismissible fade show col-6 offset-3" role="alert">
+        <%= success %>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    <% } %>
+
+ <!-- error alert  -->
+        <% if(error && error.length) {%>
+            <div class="alert alert-danger alert-dismissible fade show col-6 offset-3" role="alert">
+                <%= error %>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            <% } %>
