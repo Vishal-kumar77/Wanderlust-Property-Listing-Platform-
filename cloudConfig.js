@@ -14,7 +14,8 @@ const storage = new CloudinaryStorage({
   cloudinary: cloudinary,
   params: {
     folder: 'wanderlust_DEV',// we specify our folder name  where we want to store our files inside cloudinary
-    allowedformat: ["png", "jpg", "jpeg", "pdf", "avif"]// we specify the type of files we want to store inside our folder
+    allowedformat: ["png", "jpg", "jpeg", "pdf", "avif"],// we specify the type of files we want to store inside our folder
+    format: async (req, file) => 'webp'
   },
 });
 
