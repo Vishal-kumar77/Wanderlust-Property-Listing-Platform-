@@ -11,6 +11,18 @@ document.addEventListener("DOMContentLoaded", function () {
     // map.addControl(gc, 'top-left');
     const locationString = listing_location; // EJS injects location string
 
+    // Create a ResizeObserver to watch for size changes on the map container.
+
+    const resizeObserver = new ResizeObserver(() => {
+        map.resize();
+    });
+
+    const mapContainer = document.getElementById('map');
+    if (mapContainer) {
+        resizeObserver.observe(mapContainer);
+    }
+
+
     function geocodeAndCenter(location) {
         const url = `https://api.maptiler.com/geocoding/${encodeURIComponent(location)}.json?key=${maptilersdk.config.apiKey}`;
 
